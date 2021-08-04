@@ -1,0 +1,9 @@
+author: Gonz
+main: fr.gonz.cosmetics.Main
+version: 1.0.0
+name: Cosmetics
+api-version: 1.16
+commands:
+  cosmetics:
+    description: Open the cosmetics GUI
+    aliases: [trails, particles]
