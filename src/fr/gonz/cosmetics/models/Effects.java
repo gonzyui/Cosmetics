@@ -60,7 +60,7 @@ public class Effects {
         }, 0, 1);
     }
 
-    public void startWater() {
+    public void fallingWater() {
         taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(Main.class), new Runnable() {
 
             double var = 0;
@@ -78,6 +78,48 @@ public class Effects {
                 second = loc.clone().add(Math.cos(var + Math.PI), Math.sin(var) + 1, Math.sin(var + Math.PI));
                 player.getWorld().spawnParticle(Particle.FALLING_WATER, first, 0);
                 player.getWorld().spawnParticle(Particle.FALLING_WATER, second, 0);
+            }
+        }, 0, 1);
+    }
+
+    public void dripLava() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(Main.class), new Runnable() {
+            double var = 0;
+            Location loc, first, second;
+            ParticleData particle = new ParticleData(player.getUniqueId());
+
+            @Override
+            public void run() {
+                if (!particle.hasID()) {
+                    particle.setID(taskID);
+                }
+                var += Math.PI / 16;
+                loc = player.getLocation();
+                first = loc.clone().add(Math.cos(var), Math.sin(var) + 1, Math.sin(var));
+                second = loc.clone().add(Math.cos(var + Math.PI), Math.sin(var) + 1, Math.sin(var + Math.PI));
+                player.getWorld().spawnParticle(Particle.DRIP_LAVA, first, 0);
+                player.getWorld().spawnParticle(Particle.DRIP_LAVA, second, 0);
+            }
+        }, 0, 1);
+    }
+
+    public void hearts() {
+        taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(Main.class), new Runnable() {
+            double var = 0;
+            Location loc, first, second;
+            ParticleData particle = new ParticleData(player.getUniqueId());
+
+            @Override
+            public void run() {
+                if (!particle.hasID()) {
+                    particle.setID(taskID);
+                }
+                var += Math.PI / 16;
+                loc = player.getLocation();
+                first = loc.clone().add(Math.cos(var), Math.sin(var) + 1, Math.sin(var));
+                second = loc.clone().add(Math.cos(var + Math.PI), Math.sin(var) + 1, Math.sin(var + Math.PI));
+                player.getWorld().spawnParticle(Particle.HEART, first, 0);
+                player.getWorld().spawnParticle(Particle.HEART, second, 0);
             }
         }, 0, 1);
     }

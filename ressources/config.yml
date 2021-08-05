@@ -1,0 +1,16 @@
+############################################################################
+##                            CosmeticsPlus                               ##
+##                           v1.0.0 by Gonz                               ##
+############################################################################
+
+global:
+  prefix: "&7[&bCosmeticsPlus&7]"
+
+
+messages:
+  totem-enabled: "&eYou activated &aTotem &eparticle."
+  no-permission: "&cYou do not have permission to do this!"
+  reload: "&aReloaded configuration."
+
+particles:
+  gui:
