@@ -13,4 +13,7 @@ messages:
   reload: "&aReloaded configuration."
 
 particles:
-  gui:
+  totem:
+    enabled: "&aSuccessfully enabled &eTotem &aparticles."
+    gui:
+    removed:

@@ -1,9 +1,14 @@
 author: Gonz
 main: fr.gonz.cosmetics.Main
-version: 1.0.0
+version: 1.0.2
 name: CosmeticsPlus
 api-version: 1.16
 commands:
   particles:
     description: Open the particles GUI
     aliases: particle
+  creload:
+    description: Reload the plugin
+  pets:
+    description: Open the pets GUI
+    aliases: pet

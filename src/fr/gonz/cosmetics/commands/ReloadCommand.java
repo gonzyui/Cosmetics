@@ -13,16 +13,16 @@ public class ReloadCommand implements CommandExecutor {
         if (label.equalsIgnoreCase("creload")) {
             if (!(sender instanceof Player)) {
                 Main.getPlugin(Main.class).reloadConfig();
-                sender.sendMessage(Main.getPlugin(Main.class).getConfig().getString("plugin-prefix").replace("&", "§") + Main.getPlugin(Main.class).getConfig().getString("messages.reload"));
+                sender.sendMessage("§aSuccessfully reloaded the plugin!");
                 return true;
             }
             Player p = (Player)sender;
             if (p.hasPermission("cosmetics.reload") || p.isOp()) {
                 Main.getPlugin(Main.class).reloadConfig();
-                p.sendMessage(Main.getPlugin(Main.class).getConfig().getString("plugin-prefix").replace("&", "§") + Main.getPlugin(Main.class).getConfig().getString("messages.reload"));
+                p.sendMessage("§aSuccessfully reloaded the plugin!");
                 return true;
             } else {
-                p.sendMessage(Main.getPlugin(Main.class).getConfig().getString("plugin-prefix").replace("&", "§") + Main.getPlugin(Main.class).getConfig().getString("no-permission").replace("&", "§"));
+                p.sendMessage("§cYou do not have permission!");
             }
         }
         return false;
