@@ -17,6 +17,7 @@ public class Main extends JavaPlugin {
         saveDefaultConfig();
         ParticlesGUI menu = new ParticlesGUI();
         menu.register();
+        getLogger.info("Enabling plugin..");
 
         PluginManager pm = this.getServer().getPluginManager();
         pm.registerEvents(new ClickEvent(), this);
@@ -27,7 +28,7 @@ public class Main extends JavaPlugin {
     }
 
     @Override
-    public void onDisable() {}
+    public void onDisable() { getLogger.info("Disabling plugin.."); }
     
     public static Main getInstance() {
         return INSTANCE;
